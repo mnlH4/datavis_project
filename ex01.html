@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Requete sur wikidata
+    </h1>
+    <p>Theme : Scientifique </p>
+    <p>
+        Code de la requete :
+        <pre>
+            <code>
+                SELECT ?scientifique ?prénom ?nom_de_famille ?nom_de_familleLabel ?date_de_naissance ?lieu_de_naissance ?lieu_de_naissanceLabel ?occupation ?occupationLabel ?domaine_d_activité ?domaine_d_activitéLabel ?scolarité WHERE {
+                    SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+                    ?scientifique wdt:P106 wd:Q901.
+                    OPTIONAL { ?scientifique wdt:P735 ?prénom. }
+                    OPTIONAL { ?scientifique wdt:P734 ?nom_de_famille. }
+                    OPTIONAL { ?scientifique wdt:P569 ?date_de_naissance. }
+                    OPTIONAL { ?scientifique wdt:P19 ?lieu_de_naissance. }
+                    OPTIONAL { ?scientifique wdt:P106 ?occupation. }
+                    OPTIONAL { ?scientifique wdt:P101 ?domaine_d_activité. }
+                    OPTIONAL { ?scientifique wdt:P69 ?scolarité. }
+                  }
+                  LIMIT 2000
+            </code>
+        </pre>
+    </p>
+    <iframe style="width: 80vw; height: 50vh; border: none;" 
+    src="https://query.wikidata.org/embed.html#SELECT%20%3Fscientifique%20%3Fpr%C3%A9nom%20%3Fnom_de_famille%20%3Fnom_de_familleLabel%20%3Fdate_de_naissance%20%3Flieu_de_naissance%20%3Flieu_de_naissanceLabel%20%3Foccupation%20%3FoccupationLabel%20%3Fdomaine_d_activit%C3%A9%20%3Fdomaine_d_activit%C3%A9Label%20%3Fscolarit%C3%A9%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%3Fscientifique%20wdt%3AP106%20wd%3AQ901.%0A%20%20OPTIONAL%20%7B%20%3Fscientifique%20wdt%3AP735%20%3Fpr%C3%A9nom.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fscientifique%20wdt%3AP734%20%3Fnom_de_famille.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fscientifique%20wdt%3AP569%20%3Fdate_de_naissance.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fscientifique%20wdt%3AP19%20%3Flieu_de_naissance.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fscientifique%20wdt%3AP106%20%3Foccupation.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fscientifique%20wdt%3AP101%20%3Fdomaine_d_activit%C3%A9.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fscientifique%20wdt%3AP69%20%3Fscolarit%C3%A9.%20%7D%0A%7D%0ALIMIT%202000"
+    referrerpolicy="origin"
+    sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+</body>
+</html>
