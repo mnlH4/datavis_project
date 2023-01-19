@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+</head>
+<body>
+
+
+    <h1>Visualisation de données non-structurées</h1>
+    <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#%23defaultView%3AGraph%0ASELECT%20DISTINCT%20%3Ffilm%20%3FfilmLabel%20%3Fimage%20%3Fdirector%20%3Fproducer%20%3Factor%20%3Fwriter%20%3Frelease_date%20%3Fbudget%20%3Fbox_office_revenue%20%3Fpr%C3%A9nom%20%3Fpr%C3%A9nomLabel%20%3Fnom_de_naissance%20WHERE%20%7B%0A%20%20%3Ffilm%20wdt%3AP31%20wd%3AQ11424.%0A%20%20%3Ffilm%20%20wdt%3AP18%20%3Fimage.%0A%20%20%20%3Ffilm%20wdt%3AP57%20%3Fdirector.%0A%20%20%20%3Ffilm%20wdt%3AP162%20%3Fproducer.%0A%20%20%20%3Ffilm%20wdt%3AP161%20%3Factor.%0A%20%20%20%3Factor%20wdt%3AP1477%20%3Fnom_de_naissance.%0A%20%20%20%3Ffilm%20wdt%3AP58%20%3Fwriter.%0A%20%20%3Ffilm%20%20wdt%3AP577%20%3Frelease_date.%0A%20%20%20%3Ffilm%20wdt%3AP2130%20%3Fbudget.%0A%20%20%20%3Ffilm%20wdt%3AP2142%20%3Fbox_office_revenue.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%0A%7D%0ALIMIT%20250" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+
+    
+    <h1>Visualisation intéractives</h1>
+    <iframe src="./vega_film.html" frameborder="0" width="500" height="500"></iframe>
+
+    <h1>Visualisation graphique</h1>
+    <p>
+      Source de données : <a href="https://query.wikidata.org/#%23defaultView%3AGraph%0ASELECT%20DISTINCT%20%3Ffilm%20%3FfilmLabel%20%3Fimage%20%3Fdirector%20%3Fproducer%20%3Factor%20%3Fwriter%20%3Frelease_date%20%3Fbudget%20%3Fbox_office_revenue%20%3Fpr%C3%A9nom%20%3Fpr%C3%A9nomLabel%20%3Fnom_de_naissance%20WHERE%20%7B%0A%20%20%3Ffilm%20wdt%3AP31%20wd%3AQ11424.%0A%20%20%3Ffilm%20%20wdt%3AP18%20%3Fimage.%0A%20%20%20%3Ffilm%20wdt%3AP57%20%3Fdirector.%0A%20%20%20%3Ffilm%20wdt%3AP162%20%3Fproducer.%0A%20%20%20%3Ffilm%20wdt%3AP161%20%3Factor.%0A%20%20%20%3Factor%20wdt%3AP1477%20%3Fnom_de_naissance.%0A%20%20%20%3Ffilm%20wdt%3AP58%20%3Fwriter.%0A%20%20%3Ffilm%20%20wdt%3AP577%20%3Frelease_date.%0A%20%20%20%3Ffilm%20wdt%3AP2130%20%3Fbudget.%0A%20%20%20%3Ffilm%20wdt%3AP2142%20%3Fbox_office_revenue.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%0A%7D%0ALIMIT%20250"> WikiData Query</a>
+      On a utilisé le modèle graphique <b>Dendrogram</b> fait avec Observable. 
+    </p>
+    <iframe width="100%" height="1375" frameborder="0"
+    src="https://observablehq.com/embed/13710f2568634478@343?cells=chart%2Cflare%2CSunburst%2Cfilename"></iframe>
+    
+</body>
+</html>
