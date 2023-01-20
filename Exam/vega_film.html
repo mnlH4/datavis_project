@@ -13,17 +13,10 @@
   "description": "A scatterplot showing horsepower and miles per gallons that opens a Google search for the car that you click on.",
   "data": {"url": "https://api.npoint.io/22288bc23e47f53107e5"},
   "mark": "point",
-  "transform": [
-    {
-      "calculate": "'https://www.google.com/search?q=' + datum.Name",
-      "as": "url"
-    }
-  ],
   "encoding": {
     "x": {"field": "nom_de_naissance", "type": "nominal"},
     "y": {"field": "budget", "type": "quantitative"},
-    "color": {"field": "filmLabel", "type": "nominal"},
-    "href": {"field": "url", "type": "nominal"}
+    "color": {"field": "filmLabel", "type": "nominal"}
   },
   "config": {}
 };
