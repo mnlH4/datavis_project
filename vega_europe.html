@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing horsepower and miles per gallons that opens a Google search for the car that you click on.",
+  "background": "white",
+  "padding": 5,
+  "width": 500,
+  "height": 500,
+  "style": "cell",
+  "data": {"url": "https://api.npoint.io/404b8410b2ec3ada375d"},
+  "mark": "point",
+  "transform": [
+    {
+      "calculate": "'https://www.google.com/search?q=' + datum.Name",
+      "as": "url"
+    }
+  ],
+  "encoding": {
+    "x": {"field": "capitaleLabel", "type": "nominal"},
+    "y": {"field": "population", "type": "quantitative"},
+    "color": {"field": "monnaieLabel", "type": "nominal"},
+    "tooltip": {"field": "langue_utilisĂ©eLabel", "type": "nominal"},
+    "href": {"field": "url", "type": "nominal"}
+  },
+  "config": {}
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>
